@@ -24,7 +24,7 @@
 
 ## Deadlines
 
-- [ ] By 11/26 Create git repo with completed design spec, and deadlines
+- [x] By 11/26 Create git repo with completed design spec, and deadlines
 - [ ] By 12/4 Create Load Screen with all basic features
     - Creat ecompany initialization screen with all basic features
     - Create 6 months of payroll data to get an idea how to best display it to user
