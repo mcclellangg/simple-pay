@@ -154,10 +154,30 @@ def calc_net_pay():
 def make_calculations():
     t = "           "
     # Make Header label to display info:
-    header_label = tk.Label(root, text="Name\tGross Pay\tFederal\tSocial\tMedicare\tState\tNet Deductions\tNet Pay")
+    header_label = tk.Label(
+        root,
+        text="Name\tGross Pay\tFederal\tSocial\tMedicare\tState\tNet Deductions\tNet Pay",
+    )
     header_label.grid(row=5, column=0, columnspan=2)
 
-    deductions_label = tk.Label(root, text=employeeTextbox.get() + t + grossPayTextbox.get() + t + calc_fed() + t + calc_social() + t + calc_medicare() + t + calc_state() + t + calc_net_deuctions() + t + calc_net_pay())
+    deductions_label = tk.Label(
+        root,
+        text=employeeTextbox.get()
+        + t
+        + grossPayTextbox.get()
+        + t
+        + calc_fed()
+        + t
+        + calc_social()
+        + t
+        + calc_medicare()
+        + t
+        + calc_state()
+        + t
+        + calc_net_deuctions()
+        + t
+        + calc_net_pay(),
+    )
     deductions_label.grid(row=6, column=0, columnspan=2)
 
 
@@ -168,17 +188,17 @@ def submit():
     c.execute(
         """INSERT INTO paychecks VALUES(
             :date, :employee, :gross_pay, :fed_deduct, :social_deduct, :med_deduct, :state_deduct, :net_deduct, :net_pay)""",
-            {
-                "date": '{: %m/%d/%Y }'.format(datetime.datetime.now()),
-                "employee": employeeTextbox.get(),
-                "gross_pay": grossPayTextbox.get(),
-                "fed_deduct": calc_fed(),
-                "social_deduct": calc_social(),
-                "med_deduct": calc_medicare(),
-                "state_deduct": calc_state(),
-                "net_deduct": calc_net_deuctions(),
-                "net_pay": calc_net_pay()
-            },
+        {
+            "date": "{: %m/%d/%Y }".format(datetime.datetime.now()),
+            "employee": employeeTextbox.get(),
+            "gross_pay": grossPayTextbox.get(),
+            "fed_deduct": calc_fed(),
+            "social_deduct": calc_social(),
+            "med_deduct": calc_medicare(),
+            "state_deduct": calc_state(),
+            "net_deduct": calc_net_deuctions(),
+            "net_pay": calc_net_pay(),
+        },
     )
     # Commit changes and close connection:
     conn.commit()
