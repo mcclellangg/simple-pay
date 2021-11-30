@@ -26,7 +26,7 @@
 
 - [x] By 11/26 Create git repo with completed design spec, and deadlines
 - [ ] By 12/4 Create Load Screen with all basic features
-    - Creat ecompany initialization screen with all basic features
+    - Create company initialization screen with all basic features
     - Create 6 months of payroll data to get an idea how to best display it to user
 - [ ] By 12/17 Create Record Display/Management with all basic and related features
 - [ ] By 12/23 Have first round final product (all main features completed) ready for deployment testing
