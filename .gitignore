@@ -70,5 +70,6 @@ ENV/
 env.bak/
 venv.bak/
 
-# Test sqlite database files:
+# Test folder, and files:
 *.db
+splash/
