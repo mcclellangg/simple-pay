@@ -1,8 +1,9 @@
 # splash2.py
 """An updated version of the splash prototype based on experiments with the button prototype
 this will allow for a display frame that changes based on the buttons clicked by the user."""
+from sqlite3.dbapi2 import Error
 import tkinter as tk
-# import sqlite3
+import sqlite3
 import os
 
 root = tk.Tk()
@@ -30,20 +31,48 @@ def clear_frame():
 def open_selected():
     """Destroys andy widgets in the display frame, and then updates it based on the company file that is
     selected in the dropdown menu."""
-    clear_frame()
-    openText = tk.Label(displayFrame, text="Company name!", width=40)
-    calcBtn = tk.Button(displayFrame, text="Open paycheck calculator!")
-    recordBtn = tk.Button(displayFrame, text="Company Records")
 
-    openText.pack()
-    calcBtn.pack()
-    recordBtn.pack()
+    clear_frame()
+    openText = tk.Label(displayFrame, text=selected.get(), width=40)
+    calcBtn = tk.Button(displayFrame, text="Create paychecks", width=20)
+    recordBtn = tk.Button(displayFrame, text="Company Records", width=20)
+
+    openText.pack(pady=2)
+    calcBtn.pack(pady=2)
+    recordBtn.pack(pady=2)
 
 
 def create_file():
     """Destroys any widgets in the display frame and then reads the company name from the entry widget,
     and initializes a new .db file in the company files directory, with a table already created."""
-    pass
+
+    file_name = entryField.get()
+    file_path = r"./company_files/" + file_name + ".db"
+
+    try:
+        conn = sqlite3.connect(file_path)
+        c = conn.cursor()
+        c.execute(
+            """CREATE TABLE paychecks (
+                date text,
+                employee text,
+                gross_pay integer,
+                fed_deduct integer,
+                social_deduct integer,
+                med_deduct integer,
+                state_deduct integer,
+                net_deduct integer,
+                net_pay integer
+            )"""
+        )
+        conn.commit()
+        conn.close()
+
+        clear_frame()
+        confirmText = tk.Label(displayFrame, text=f"{file_name} was created!")
+        confirmText.pack()
+    except Error as e:
+        print(e)
 
 
 def display_about():
