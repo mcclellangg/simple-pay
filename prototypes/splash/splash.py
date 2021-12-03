@@ -18,7 +18,7 @@ root.title("Simple Pay Splash")
 root.geometry("600x800")
 
 # Logo :
-logo = tk.Label(root, text="Simple Pay", borderwidth=2, relief="raised")
+logo = tk.Label(root, text="Simple Pay", borderwidth=2, relief="solid")
 logo.config(font=("Helvatical bold", 20))
 logo.grid(row=0, column=0, ipadx=50, ipady=50, padx=150, pady=20, columnspan=3)
 
@@ -30,7 +30,9 @@ for file in os.listdir("./company_files"):
 selected = tk.StringVar()
 selected.set("Choose Company")
 
-display_frame_text = ""
+display_frame_text = tk.StringVar()
+display_frame_text.set("Change my text")
+
 entry_default_text = "Enter Company name"
 
 
@@ -38,25 +40,16 @@ entry_default_text = "Enter Company name"
 def about():
     """Command passed to the about button, when clicked this will display information about the app in the display frame."""
     global display_frame_text
-    if not display_frame_text:
-        display_frame_text = "This will now show the about text!"  # HACK maybe create an about file that this reads in as text.
-        info = tk.Label(display_frame, text=display_frame_text)
-        info.pack()
+    display_frame_text = "This will now show the about text!"  # HACK maybe create an about file that this reads in as text.
+    info = tk.Label(display_frame, textvariable=display_frame_text)
+    info.grid(row=0, column=0)
 
 
 def open():
     """Command passed to the open button, when clicked will read which company was chosen from the dropdown, and open
-    the file in a new window."""
-    top = tk.Toplevel()
-    top.geometry = ("400x400")
-    # Read company in dropdown menu:
+    the file in the about pane with two buttons."""
 
-    # Pack info about company into new window:
-    display_frame = tk.LabelFrame(top, text=selected.get(), padx=125, pady=150)
-    info_lbl = tk.Label(display_frame, text='the company file information will go here')
-
-    info_lbl.pack()
-    display_frame.pack(padx=20, pady=20)
+    pass
 
 
 def create_file():
@@ -118,8 +111,11 @@ create_btn.grid(row=2, column=2, padx=5, pady=5)
 about_btn.grid(row=3, column=0, padx=5, pady=5)
 
 # Create a frame to display company files in:
-display_frame = tk.LabelFrame(root, text="Company Info", padx=125, pady=150)
+display_frame = tk.LabelFrame(root, text="Display Panel", padx=125, pady=150)
+display_lbl = tk.Label(display_frame, textvariable=display_frame_text)
+
 display_frame.grid(row=4, column=0, columnspan=3, padx=50, pady=40)
+display_lbl.grid(row=0, column=0)
 
 # Start the event loop
 root.mainloop()
