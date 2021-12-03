@@ -62,7 +62,7 @@ entryField = tk.Entry(root, text="Company name")
 createBtn = tk.Button(root, text="Create", command=create_file)
 aboutBtn = tk.Button(root, text="About", command=display_about)
 
-displayFrame =tk.LabelFrame(root, text="Display Info", width=500, height=400, padx=125, pady=150)
+displayFrame = tk.LabelFrame(root, text="Display Info", width=500, height=400, padx=125, pady=150)
 msgText = tk.Label(displayFrame, text=MESSAGE_TEXT, width=40)
 
 dropdown.config(width=35)
