@@ -34,8 +34,8 @@ def open_selected():
 
     clear_frame()
     openText = tk.Label(displayFrame, text=selected.get(), width=40)
-    calcBtn = tk.Button(displayFrame, text="Create paychecks", width=20)
-    recordBtn = tk.Button(displayFrame, text="Company Records", width=20)
+    calcBtn = tk.Button(displayFrame, text="Create Paychecks", width=20, command=open_paycalc)
+    recordBtn = tk.Button(displayFrame, text="Company Records", width=20, command=open_records)
 
     openText.pack(pady=2)
     calcBtn.pack(pady=2)
@@ -81,6 +81,26 @@ def display_about():
     clear_frame()
     aboutText = tk.Label(displayFrame, text="The about text!", width=40)
     aboutText.pack()
+
+
+def open_paycalc():
+    """Command for the calcBtn, opens the paycheck calculator in a new window when clicked."""
+    top = tk.Toplevel()
+    top.title("Payroll Calculator")
+    top.geometry("500x500")
+
+    topLbl = tk.Label(top, text=selected.get())
+    topLbl.pack()
+
+
+def open_records():
+    """Command for the recordBtn, opens the paycheck records in a new window when clicked."""
+    top = tk.Toplevel()
+    top.title("Payroll Records")
+    top.geometry("500x500")
+
+    topLbl = tk.Label(top, text=selected.get())
+    topLbl.pack()
 
 
 openLbl = tk.Label(root, text="Open Company: ")
