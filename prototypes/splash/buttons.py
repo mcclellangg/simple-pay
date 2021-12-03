@@ -24,9 +24,9 @@ def open_file():
     calcBtn = tk.Button(msgFrame, text="Open paycheck calculator!")
     recordBtn = tk.Button(msgFrame, text="Company Records")
 
-    openText.pack(expand=False)
-    calcBtn.pack(expand=False)
-    recordBtn.pack(expand=False)
+    openText.pack()
+    calcBtn.pack()
+    recordBtn.pack()
 
 
 def create():
