@@ -35,12 +35,6 @@ def create_paycheck():
     pass
 
 
-def calculate_deductions():
-    """Automatically calculates deductions provided in entry fields, and returns a paystub to the user."""
-    # Need to ensure that all numbers are floats rounded to 2 decimal places
-    pass
-
-
 def update_records():
     """Takes the paystub that has been created, attaches a timestamp, and puts it into the database."""
     pass
