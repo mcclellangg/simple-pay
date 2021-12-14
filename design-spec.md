@@ -2,7 +2,7 @@
 
 ## Concept brief
 
-<p>Simple pay will be a desktop payroll management application. It will give users the ability to create, and manage employee paychecks. This system will be broken up into three main features: Company Management, Record Display, and Paycheck Auto Calulator.</p>
+<p>Simple pay will be a desktop payroll management application. It will give users the ability to create, and manage employee paychecks. This system will be broken up into three main features: Company Management, Record Display, and Paycheck Auto Calculator.</p>
 
 ## Main features
 
@@ -34,11 +34,11 @@
 
 ## Possible expansion of features/general improvements
 
-<p>In a more advanced version it would be nice for the user to manage employees seperate from paychecks, and store more employee info. But I don't see how that is currently relevant to the most basic functionalites of the app (a paycheck manager) so I will leave it alone for now.</p>
+<p>In a more advanced version it would be nice for the user to manage employees separate from paychecks, and store more employee info. But I don't see how that is currently relevant to the most basic functionalities of the app (a paycheck manager) so I will leave it alone for now.</p>
 
-<p>Once I get the app working, I will try to go back and sort functionalites into seperate classes to make the code cleaner, but for now I just want to get it up and running, and don't want to get too bogged down in that, since for me that would likely be an entirely seperate issue that will take significant time for me to address.</p>
+<p>Once I get the app working, I will try to go back and sort functionalities into separate classes to make the code cleaner, but for now I just want to get it up and running, and don't want to get too bogged down in that, since for me that would likely be an entirely separate issue that will take significant time for me to address.</p>
 
-<p>Design unit tests to assert that payroll calulations match calculations in table.</p>
+<p>Design unit tests to assert that payroll calculations match calculations in table.</p>
 
 <p>Have app run from one window, and have frames stack on top of each other.</p>
 
