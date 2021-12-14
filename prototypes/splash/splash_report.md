@@ -5,7 +5,7 @@
     - It should protect against the following:
        - [ ] Large filenames (give a max size)
        - [ ] Use of escape characters
-       - [ ] Wheter or not file already exits in directory
+       - [ ] Whether or not file already exits in directory
 - [ ] Adding a new company does not update the dropdown menu until app is restarted
 - [ ] About text is just a placeholder
 - [ ] Open button allows you to choose open a blank file
@@ -14,7 +14,7 @@
 
 ## Insights
 
-<p> Moving forward I might need to seperate out all of the command functions into a seperate module, and import them in for readability reasons. Eventually I think it would also be largely benefical to put objects into their own classes. Possibly seperated by windows (splash, record display, paycheck calculator). I'm also still not to sure about opening the paycalc in a new window using the topLevel class (at least not the way it is written now). Maybe refactoring that is in the futute.</p>
+<p> Moving forward I might need to separate out all of the command functions into a separate module, and import them in for readability reasons. Eventually I think it would also be largely beneficial to put objects into their own classes. Possibly separated by windows (splash, record display, paycheck calculator). I'm also still not to sure about opening the paycalc in a new window using the topLevel class (at least not the way it is written now). Maybe refactoring that is in the future.</p>
 
 ## Next Steps
 
