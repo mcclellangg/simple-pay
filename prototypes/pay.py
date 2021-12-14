@@ -133,7 +133,7 @@ def calc_social():
     return str(round(deduction, 2))
 
 
-def calc_net_deuctions():
+def calc_net_deductions():
     """Calculates the total deductions"""
     federal = float(calc_fed())
     social = float(calc_social())
@@ -145,7 +145,7 @@ def calc_net_deuctions():
 
 def calc_net_pay():
     gross_pay = float(grossPayTextbox.get())
-    total_deductions = float(calc_net_deuctions())
+    total_deductions = float(calc_net_deductions())
     net = round(gross_pay - total_deductions, 2)
     return str(net)
 
@@ -174,7 +174,7 @@ def make_calculations():
         + t
         + calc_state()
         + t
-        + calc_net_deuctions()
+        + calc_net_deductions()
         + t
         + calc_net_pay(),
     )
@@ -196,7 +196,7 @@ def submit():
             "social_deduct": calc_social(),
             "med_deduct": calc_medicare(),
             "state_deduct": calc_state(),
-            "net_deduct": calc_net_deuctions(),
+            "net_deduct": calc_net_deductions(),
             "net_pay": calc_net_pay(),
         },
     )
