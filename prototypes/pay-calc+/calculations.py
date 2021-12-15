@@ -84,7 +84,19 @@ def calc_fed(G: float, E1: int) -> float:
 
 def calculate_deductions(user_input: dict) -> dict:
     """Takes the user input generated from the create paycheck function, and performs the necessary
-    calculations to create a paycheck object.
+    calculations to create a paycheck object in the following format:
+
+    {'timestamp': 'DATETIME object',
+    'name': STRING,
+    'exemptions': INTEGER,
+    'gross pay': FLOAT round 2,
+    'federal': FLOAT round 2,
+    'social security': FLOAT round 2,
+    'medicare': FLOAT round 2,
+    'state': FLOAT round 2,
+    'net': FLOAT round 2,
+    'net pay': FLOAT round 2
+    }
     """
     # Initialize variables to be passed to functions:
     paycheck = {}
@@ -115,9 +127,3 @@ def calculate_deductions(user_input: dict) -> dict:
     paycheck["net pay"] = paycheck["gross pay"] - paycheck["net"]
 
     return paycheck
-
-
-test = {"name": "Jim", "exemptions": 2, "gross pay": 1100}
-check = calculate_deductions(test)
-for item in check:
-    print(item, check[item], type(check[item]))
