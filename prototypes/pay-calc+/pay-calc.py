@@ -16,6 +16,7 @@
     }
 """
 import tkinter as tk
+import calculations as calc
 
 root = tk.Tk()
 root.title("Pay-Calc+")
@@ -32,7 +33,13 @@ def create_paycheck():
         'exemptions': int(exemptionsField.get()),
         'gross pay' : round(float(grossField.get()), 2)
     }
-    pass
+    paycheck = calc.calculate_deductions(user_input)
+    # Display the info:
+    for widget in displayFrame.winfo_children():
+        widget.destroy()
+    infoLbl = tk.Label(displayFrame, text=paycheck, width=60, wraplength=500)
+    infoLbl.pack()
+
 
 
 def update_records():
